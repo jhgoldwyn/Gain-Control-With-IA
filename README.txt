@@ -52,5 +52,16 @@ d = diffusion constant for axial current flow
 synCable = compartment number of excitatory inputs
 
 
+a text data files are created with names like
+"data1cpt_xxxx.txt" or "data10cpt_xxxx.txt" [if writeData variable is 1]
+"spike1cpt_xxxx.txt" or "spike10cpt_xxxx.txt" [if writeData variable is 2]
+
+To plot voltage as a function of time, for instance
+run either code with writeData = 1
+The first and second columns of the output data txt file are time and voltage, respectively
+
+
 
 **** XPP CODE ****
+
+
