@@ -149,9 +149,9 @@ int main(int argc, char *argv[]){
     int nite;
     double sum;
     if (writeData==1){  /* save all data */
-      sprintf(name1, "/Users/jgoldwy1/Research/inhibitionIA/data/10cpt/data10cpt_ga%g_ge%.1f_gi%g_re%.1f_ri%g_d%g_syn%d.txt",ga,gsyne, gsyni, rsyne,rsyni,d,synCable);}
+      sprintf(name1, "data10cpt_ga%g_ge%.1f_gi%g_re%.1f_ri%g_d%g_syn%d.txt",ga,gsyne, gsyni, rsyne,rsyni,d,synCable);}
     else if (writeData==2){ /* save spikes */
-      sprintf(name1, "/Users/jgoldwy1/Research/inhibitionIA/data/10cpt/spike10cpt_ga%g_ge%.1f_gi%g_re%.1f_ri%g_d%g_syn%d.txt",ga,gsyne, gsyni, rsyne,rsyni,d,synCable);}
+      sprintf(name1, "spike10cpt_ga%g_ge%.1f_gi%g_re%.1f_ri%g_d%g_syn%d.txt",ga,gsyne, gsyni, rsyne,rsyni,d,synCable);}
     output=fopen(name1, "w");
 
    /*open the data file*/
