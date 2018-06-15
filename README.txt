@@ -8,11 +8,24 @@ Authors: Joshua H Goldwyn, Bradley R Slabe, Joseph B Travers, David Terman
 
 Published in: PLoS Computational BiologyThe authors make following code available for scientific research and educational purposes:
 
+**** XPP CODE ****
+
+50.ode
+The single-compartment model with A-type Potassium current
+
+This program can be run in xppaut and simultaneously simulates responses to 50 different excitatory input trains
+
+Range of 50 different excitation rates is set by rmin and rmax parameters
+Other parameter values representing synaptic inputs are inhibition rate (ratei), exciation strength (gsyne), and inhibition strength (gsyni)
+
+Dynamical variables are indexed for each excitatory rate.
+For example:  V1 is the voltage response in the case of the lowest excitation rate (ratee=rmin) and V50 is the voltage response in the case of the highest excitation rate (ratee=rmax)
+
 
 **** C CODE ****
 
 ga.c
-A single-compartment model with Hodgkin-Huxley-like model of spiking dynamics and A-type Potassium current
+The single-compartment model with A-type Potassium current
 
 gaCable.c
 A multi-compartment neuron model with the first compartment representing the soma and spike-generator region and the other 9 compartments representing a dendritic process 
@@ -61,7 +74,5 @@ run either code with writeData = 1
 The first and second columns of the output data txt file are time and voltage, respectively
 
 
-
-**** XPP CODE ****
 
 

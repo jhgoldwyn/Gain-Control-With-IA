@@ -1,0 +1,103 @@
+p rmin=0
+p rmax=.1
+p ratei=.023
+
+ratee[1..50]=rmin+(rmax-rmin)*([j]-1)/50
+
+markov ze[1..50] 2
+{0} {ratee[j]}
+{1} {0}
+
+xe[1..50]'=0
+b[1..50]'=(binf(v[j])-b[j])/taub
+
+y[1..50]'=0
+
+
+n[1..50]'=phi*( ninf(v[j])-n[j] )/taun(v[j])
+v[1..50]'=-(il(v[j])+ina(v[j],1-n[j])+ik(v[j],n[j])+ia(v[j],a[j],b[j])+isyni[j]+isyne[j])
+
+zi'=ratei
+i zi=0
+
+se[1..50]'=-betae*se[j]
+p betae=.2
+
+si'=-beta*si
+xi'=0
+
+p step=1
+global 1 {ze[1..50]-.5} {xe[j]=xe[j]+step;se[j]=1}
+global 1 {v[1..50]+20} {y[j]=y[j]+1}
+global 1 {zi-.5} {xi=xi+1;si=1;zi=0}
+
+#p[1..50]'=1
+
+#global 1 {p[1..50]-500} {xe[j]=0;y[j]=0;si=0}
+
+
+
+# Persistant Na+
+p gna=37,vna=55
+p thetam=30,sm=15
+minf(v)=1./(1.+exp(-(v+thetam)/sm))
+ina(v,h)=gna*(minf(v))^3*h*(v-vna)
+
+p phi=.75
+p thetah=-39,sh=3.1
+p tauh0=1,tauh1=500,thh=57.,sigmah=3.
+hinf(v)=1./(1.+exp((v-thetah)/sh))
+tauh(v)=tauh0+tauh1/(1+exp((v+thh)/sigmah))
+
+# K+
+p gk=45,vk=-80
+ik(v,n)=gk*n^4*(v-vk)
+
+ninf(v)=1./(1.+exp((v-thetan)/sn))
+taun(v)=taun0+taun1/(1+exp((v+thn)/sigman))
+p thetan=-32.,sn=-8.
+p taun0=1,taun1=100.,thn=80.,sigman=26.
+
+# Leak
+p gl=1,vl=-70
+il(v)=gl*(v-vl)
+
+# ia
+p ga=40
+p taua=2
+p taub=150
+p thetaa=-50
+p sigmaa=20
+p thetab=-70
+p sigmab=-6
+
+ainf(v)=1/(1+exp(-(v-thetaa)/sigmaa))
+binf(v)=1/(1+exp(-(v-thetab)/sigmab))
+
+ia(v,a,b)=ga*a^3*b*(v-vk)
+
+isyni[1..50]=gsyni*si*(v[j]-vsyni)
+isyne[1..50]=gsyne*se[j]*(v[j]-vsyne)
+
+p gsyni=5
+p vsyni=-85
+p gsyne=3
+p vsyne=0
+p alpha=5,beta=.18
+
+p theta=-30,sig=.1
+sinf(v)=1/(1+exp(-(v-theta)/sig))
+
+a[1..50]=ainf(v[j])
+
+
+
+i v[1..50]=-60
+i n[1..50]=0
+i b[1..50]=.47
+
+@ dt=.05,total=5000,meth=m,xp=t,yp=v1,xlo=0,xhi=5000,ylo=-80,yhi=20.,bound=5000000,maxstor=1000000
+
+done
+
+
