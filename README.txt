@@ -6,7 +6,7 @@ Title: Gain control with A-type potassium current: IA as a switch between divisi
 
 Authors: Joshua H Goldwyn, Bradley R Slabe, Joseph B Travers, David Terman
 
-Acceptected for publication in: PLoS Computational BiologyThe authors make the following code available for scientific research and educational purposes:
+Accepted for publication in: PLoS Computational BiologyThe authors make the following code available for scientific research and educational purposes:
 
 **** XPP CODE ****
 
