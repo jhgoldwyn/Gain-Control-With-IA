@@ -2,11 +2,11 @@
 
 This repository includes simulation code used in 
 
-Title: Gain control with A-type potassium current: I_A as a switch between divisive and subtractive inhibition
+Title: Gain control with A-type potassium current: IA as a switch between divisive and subtractive inhibition
 
 Authors: Joshua H Goldwyn, Bradley R Slabe, Joseph B Travers, David Terman
 
-Published in: PLoS Computational BiologyThe authors make following code available for scientific research and educational purposes:
+Acceptected for publication in: PLoS Computational BiologyThe authors make the following code available for scientific research and educational purposes:
 
 **** XPP CODE ****
 
